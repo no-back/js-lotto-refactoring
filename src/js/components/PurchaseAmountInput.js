@@ -2,19 +2,20 @@ import {
   LOTTO_PRICE,
   MONETARY_UNIT,
   ALERT_MESSAGE,
-} from "../utils/constants.js";
-import { $, clearInputValue } from "../utils/DOM.js";
+} from '../utils/constants.js';
+import { $, clearInputValue } from '../utils/DOM.js';
 export default class PurchaseAmountInput {
   constructor({ createLottoTickets }) {
-    this.$purchaseForm = $(".purchase-form");
-    this.$purchaseInput = $(".purchase-form__input");
-    this.$purchaseButton = $(".purchase-form__button");
+    this.$purchaseForm = $('.purchase-form');
+    this.$purchaseInput = $('.purchase-form__input');
+    this.$purchaseButton = $('.purchase-form__button');
     this.createLottoTickets = createLottoTickets;
     this.initEventListers();
+    console.log(createLottoTickets);
   }
 
   initEventListers() {
-    this.$purchaseForm.addEventListener("submit", (e) => {
+    this.$purchaseForm.addEventListener('submit', (e) => {
       e.preventDefault();
       this.onSubmitPurchaseAmount();
     });
